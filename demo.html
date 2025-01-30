@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Without Button</title>
+  <style>
+    .dashboard {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin-top: 50px;
+    }
+    .card {
+      width: 200px;
+      height: 100px;
+      background: #f0f0f0;
+      border-radius: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+      font-size: 18px;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+<body>
+  <h1 style="text-align: center;">Khelo India Dashboard</h1>
+  <div class="dashboard">
+    <div id="games" class="card">Loading...</div>
+    <div id="fit-events" class="card">Loading...</div>
+    <div id="athletes" class="card">Loading...</div>
+    <div id="coaches" class="card">Loading...</div>
+    <div id="school-flag" class="card">Loading...</div>
+    <div id="academies" class="card">Loading...</div>
+  </div>
+
+  <script>
+    // Dummy data for the dashboard
+    const dashboardData = {
+      games: 45530,
+      fitEvents: "23.68 Cr",
+      athletes: 23080,
+      coaches: 1327,
+      schoolFlag: 450445,
+      academies: 287,
+    };
+
+    // Function to update the dashboard
+    function updateDashboard() {
+      // Simulate data changes
+      dashboardData.games += Math.floor(Math.random() * 100); // Add a random number to games
+      dashboardData.athletes += Math.floor(Math.random() * 10); // Add a random number to athletes
+
+      // Update the UI
+      document.getElementById("games").innerHTML = `${dashboardData.games}<br>Participation in Khelo India Games`;
+      document.getElementById("fit-events").innerHTML = `${dashboardData.fitEvents}<br>FIT India events participation`;
+      document.getElementById("athletes").innerHTML = `${dashboardData.athletes}<br>Athletes supported`;
+      document.getElementById("coaches").innerHTML = `${dashboardData.coaches}<br>Coaches and Support Staff`;
+      document.getElementById("school-flag").innerHTML = `${dashboardData.schoolFlag}<br>FIT India School Flag`;
+      document.getElementById("academies").innerHTML = `${dashboardData.academies}<br>Academies supported`;
+    }
+
+    // Automatically update the dashboard on page load
+    window.onload = updateDashboard;
+  </script>
+</body>
+</html>
